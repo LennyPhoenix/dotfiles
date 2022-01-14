@@ -1,0 +1,60 @@
+window:
+  padding:
+    x: 4
+    y: 4
+
+  dynamic_padding: true
+
+# Colour Schemes
+schemes:
+  # Dracula Extra Dark
+  dracula_extra_dark: &dracula_extra_dark
+    # Default colors
+    primary:
+      background: '#0C0E14'
+      foreground: '#f8f8f2'
+
+    # Normal colors
+    normal:
+      black:   '#000000'
+      red:     '#ff5555'
+      green:   '#50fa7b'
+      yellow:  '#f1fa8c'
+      blue:    '#caa9fa'
+      magenta: '#ff79c6'
+      cyan:    '#8be9fd'
+      white:   '#bfbfbf'
+
+    # Bright colors
+    bright:
+      black:   '#575b70'
+      red:     '#ff6e67'
+      green:   '#5af78e'
+      yellow:  '#f4f99d'
+      blue:    '#caa9fa'
+      magenta: '#ff92d0'
+      cyan:    '#9aedfe'
+      white:   '#e6e6e6'
+
+colors: *dracula_extra_dark
+
+background_opacity: 0.9
+
+font:
+  normal:
+    family: DejaVuSansMono Nerd Font
+    style: Regular
+
+  bold:
+    family: DejaVuSansMono Nerd Font
+    style: Bold
+
+  italic:
+    family: DejaVuSansMono Nerd Font
+    style: Italic
+
+  bold_italic:
+    family: DejaVuSansMono Nerd Font
+    style: Bold Italic
+
+  size: 10
