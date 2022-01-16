@@ -18,7 +18,10 @@ au BufWinEnter,WinEnter term://* startinsert
 nnoremap <silent> <leader>ot :15split<CR>:terminal<CR>
 let g:which_key_map.o.t = 'terminal'
 
-" Ranger
+" Scratch Pad
+nnoremap <leader>os :Scratch 
+
+" NNN
 lua << EOF
 require("nnn").setup({
 	picker = {

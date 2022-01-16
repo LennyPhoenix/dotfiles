@@ -37,6 +37,7 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'github/copilot.vim'
 
 " Files
+Plug 'wangy412/nvim-scratchpad'
 Plug 'junegunn/fzf.vim'
 Plug 'luukvbaal/nnn.nvim'
 Plug 'airblade/vim-rooter'
