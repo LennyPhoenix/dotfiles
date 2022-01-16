@@ -20,6 +20,7 @@ let g:which_key_map.o.t = 'terminal'
 
 " Scratch Pad
 nnoremap <leader>os :Scratch 
+let g:which_key_map.o.s = 'scratchpad'
 
 " NNN
 lua << EOF
@@ -56,6 +57,7 @@ nmap <silent> <leader>bp :bprevious<CR>
 let g:which_key_map.b = { 'name': '+buffer',
                         \ 'w':    'write',
                         \ 'b':    'buffers',
+												\ 'd':    'delete',
                         \ 'n':    'next',
                         \ 'p':    'previous' }
 
