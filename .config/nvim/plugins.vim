@@ -38,6 +38,7 @@ Plug 'github/copilot.vim'
 
 " Files
 Plug 'wangy412/nvim-scratchpad'
+Plug 'metakirby5/codi.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'luukvbaal/nnn.nvim'
 Plug 'airblade/vim-rooter'

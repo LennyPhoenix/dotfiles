@@ -18,6 +18,10 @@ au BufWinEnter,WinEnter term://* startinsert
 nnoremap <silent> <leader>ot :15split<CR>:terminal<CR>
 let g:which_key_map.o.t = 'terminal'
 
+" Open vimrc file
+nnoremap <silent> <leader>ov :e $MYVIMRC<CR>
+let g:which_key_map.o.v = 'vimrc'
+
 " Scratch Pad
 nnoremap <leader>os :Scratch 
 let g:which_key_map.o.s = 'scratchpad'
@@ -60,6 +64,10 @@ let g:which_key_map.b = { 'name': '+buffer',
 												\ 'd':    'delete',
                         \ 'n':    'next',
                         \ 'p':    'previous' }
+
+" Codi mode
+nnoremap <leader>bc :Codi!!<CR>
+let g:which_key_map.b.c = 'toggle codi'
 
 " Tabs
 nmap <silent> <leader>tN :tabnew<CR>
