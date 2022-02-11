@@ -4,6 +4,7 @@ window:
     y: 4
 
   dynamic_padding: true
+  opacity: 0.9
 
 # Colour Schemes
 schemes:
@@ -37,8 +38,6 @@ schemes:
       white:   '#e6e6e6'
 
 colors: *dracula_extra_dark
-
-background_opacity: 0.9
 
 font:
   normal:

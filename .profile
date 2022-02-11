@@ -25,6 +25,10 @@ if [ -f "$HOME/.cargo/env" ] ; then
   . "$HOME/.cargo/env"
 fi
 
+if [ -f "$HOME/.cargo/bin" ] ; then
+    PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 # include .poetry/env if it exists
 if [ -f "$HOME/.poetry/env" ] ; then
   . "$HOME/.poetry/env"
