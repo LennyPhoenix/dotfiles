@@ -1,0 +1,6 @@
+configuration {
+	modi: "combi";
+	combi-modi: "window,drun,run";
+}
+
+@theme "/home/lenny/.local/share/rofi/themes/rounded-purple-dark.rasi"
