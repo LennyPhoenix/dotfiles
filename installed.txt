@@ -1,0 +1,14 @@
+# yadm
+neovim
+alacritty
+starship
+fzf
+nerd-fonts-dejavu-complete (AUR)
+gnome-menus
+nnn
+ripgrep
+emacs
+feh
+--asdeps
+ python-neovim
+ xclip
