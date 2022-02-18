@@ -5,6 +5,7 @@
 xsetroot -cursor_name left_ptr
 
 picom -r 10 -o 0.75 -l -10 -t -10 -m 1.0 -D 3 &
+wired &
 xfce4-clipman &
 polybar example &
 

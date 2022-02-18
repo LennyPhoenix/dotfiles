@@ -12,7 +12,7 @@ schemes:
   dracula_extra_dark: &dracula_extra_dark
     # Default colors
     primary:
-      background: '#0C0E14'
+      background: '#0c0e14'
       foreground: '#f8f8f2'
 
     # Normal colors

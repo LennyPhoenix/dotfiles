@@ -12,6 +12,7 @@ feh
 picom
 polybar
 rofi
+wired (AUR)
 --asdeps
  python-neovim
  xclip
