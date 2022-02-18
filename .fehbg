@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale '/home/lenny/.wallpaper/mountains.png' 
+feh --no-fehbg --bg-fill '/home/lenny/.local/share/backgrounds/mountains.png' 
