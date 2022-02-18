@@ -9,6 +9,9 @@ nnn
 ripgrep
 emacs
 feh
+picom
+polybar
+rofi
 --asdeps
  python-neovim
  xclip
