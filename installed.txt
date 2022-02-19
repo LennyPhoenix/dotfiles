@@ -13,6 +13,7 @@ picom
 polybar
 rofi
 wired (AUR)
+easyeffects
 --asdeps
  python-neovim
  xclip
