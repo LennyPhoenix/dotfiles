@@ -3,10 +3,10 @@
 #
 
 # terminal emulator
-super + shift + Return
+super + Return
 	alacritty
 
-super + Return
+super + shift + Return
 	tdrop -aA alacritty
 
 # program launcher
@@ -120,14 +120,13 @@ super + alt + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
 # move a floating window
-super + {Left,Down,Up,Right}
+super + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 #
 # screenshot
 #
-Print
-	xfce4-screenshooter -fs
+{_,super + ,shift + } Print
+	xfce4-screenshooter -{f,w,r}
 ctrl + {_,super + ,shift + } Print
 	xfce4-screenshooter -c -{f,w,r}
-
