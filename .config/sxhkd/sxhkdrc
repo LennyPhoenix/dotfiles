@@ -14,8 +14,12 @@ super + space
 	rofi -show combi
 
 # make sxhkd reload its configuration files:
-super + Escape
+super + shift + r
 	pkill -USR1 -x sxhkd
+
+# lock screen
+super + Escape
+  light-locker-command -l
 
 #
 # bspwm hotkeys
