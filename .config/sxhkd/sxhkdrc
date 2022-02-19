@@ -7,7 +7,7 @@ super + shift + Return
 	alacritty
 
 super + Return
-	tdrop -aA -w 1916 alacritty
+	tdrop -aA alacritty
 
 # program launcher
 super + space

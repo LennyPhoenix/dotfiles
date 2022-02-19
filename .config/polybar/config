@@ -18,8 +18,8 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #0c0e14
-background-alt = #282828
+background = #aa0c0e14
+background-alt = #cc282828
 ;foreground = ${xrdb:color7:#222}
 foreground = #f8f8f2
 foreground-alt = #bfbfbf
@@ -30,8 +30,8 @@ alert = #bd2c40
 [bar/main]
 width = 100%
 height = 27
-radius = 0.0
-fixed-center = false
+radius = 3.0
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -39,14 +39,14 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #ff5555
 
-border-size = 2
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
 padding-right = 0
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
 font-0 = DejaVuSansMono Nerd Font:pixelsize=10;0
 font-1 = FontAwesome:pixelsize=10;0
@@ -54,7 +54,7 @@ font-2 = siji:pixelsize=10;0
 
 modules-left = bspwm
 ;modules-center = mpd
-modules-right = filesystem xbacklight pulseaudio temperature date powermenu
+modules-right = filesystem pulseaudio temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -73,7 +73,6 @@ interval = 25
 
 mount-0 = /
 mount-1 = /home
-mount-2 = /fast
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
@@ -100,25 +99,6 @@ label-empty-padding = 1
 
 ; Separator in between workspaces
 ; label-separator = |
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-fill = ─
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
@@ -217,39 +197,6 @@ bar-volume-empty = ─
 bar-volume-empty-font = 0
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
-
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
@@ -304,10 +251,10 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-;pseudo-transparency = false
+;pseudo-transparency = true
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 ; vim:ft=dosini
