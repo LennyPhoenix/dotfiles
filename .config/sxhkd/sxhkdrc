@@ -134,3 +134,36 @@ super + {Left,Down,Up,Right}
 	xfce4-screenshooter -{f,w,r}
 ctrl + {_,super + ,shift + } Print
 	xfce4-screenshooter -c -{f,w,r}
+
+#
+# media
+#
+
+XF86AudioRaiseVolume
+  pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+XF86AudioLowerVolume
+  pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+XF86AudioMute
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86AudioPlay
+  playerctl play-pause
+
+XF86AudioPause
+  playerctl play-pause
+
+XF86AudioNext
+  playerctl next
+
+XF86AudioPrev
+  playerctl previous
+
+# Brightness up
+XF86MonBrightnessUp
+  xbacklight -inc 5
+
+# And brightness down
+XF86MonBrightnessDown
+  xbacklight -dec 5
