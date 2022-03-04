@@ -16,7 +16,9 @@ au TermOpen             *        setlocal listchars= nonumber norelativenumber
 au TermOpen             *        startinsert
 au BufWinEnter,WinEnter term://* startinsert
 nnoremap <silent> <leader>ot :15split<CR>:terminal<CR>
+nnoremap <silent> <leader>oT :vsplit<CR>:terminal<CR>
 let g:which_key_map.o.t = 'terminal'
+let g:which_key_map.o.T = 'vertical terminal'
 
 " Open vimrc file
 nnoremap <silent> <leader>ov :e $MYVIMRC<CR>

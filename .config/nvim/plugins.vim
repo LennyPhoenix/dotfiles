@@ -5,7 +5,7 @@
 " Ensure vim-plug is installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !wget -P ~/.config/nvim/autoload/ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  let resync_plug = 1
 endif
 
 " Begin plugin list
@@ -62,3 +62,7 @@ Plug 'ryanoasis/vim-devicons'
 
 " End plugin list
 call plug#end()
+
+if !empty(resync_plug)
+  PlugInstall --sync
+endif
