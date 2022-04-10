@@ -7,4 +7,4 @@ configuration {
   kb-accept-entry:   "Control+m,Return,KP_Enter";
 }
 
-@theme "/home/lenny/.local/share/rofi/themes/rounded-purple-dark.rasi"
+@theme "../../.local/share/rofi/themes/rounded-purple-dark.rasi"

@@ -15,6 +15,7 @@ runtime which_key.vim
 runtime general.vim
 runtime interface.vim
 runtime lsp.vim
+runtime discordrpc.vim
 
 " Plugin config
 runtime sneak.vim

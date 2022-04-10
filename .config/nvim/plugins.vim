@@ -6,6 +6,8 @@
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !wget -P ~/.config/nvim/autoload/ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   let resync_plug = 1
+else
+  let resync_plug = 0
 endif
 
 " Begin plugin list

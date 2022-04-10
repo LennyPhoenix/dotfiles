@@ -6,12 +6,21 @@
 super + Return
 	alacritty
 
+# terminal dropdown
 super + shift + Return
 	tdrop -aA alacritty
+
+# pavucontrol dropdown
+super + shift + m
+  tdrop -aA pavucontrol
 
 # program launcher
 super + space
 	rofi -show combi
+
+# bitwarden rofi
+super + shift + slash
+  bwmenu
 
 # make sxhkd reload its configuration files:
 super + shift + r

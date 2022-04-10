@@ -9,10 +9,13 @@ picom -r 10 -o 0.75 -l -10 -t -10 -m 1.0 -D 3 &
 light-locker &
 easyeffects --gapplication-service &
 wired &
-xfce4-clipman &
 polybar main &
+nm-applet &
+blueman-applet &
+xfce4-clipman &
 steam -silent &
 discord --start-minimized &
+syncthing serve --no-browser &
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
