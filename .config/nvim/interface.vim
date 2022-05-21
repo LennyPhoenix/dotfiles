@@ -38,7 +38,10 @@ require("nnn").setup({
 })
 EOF
 nnoremap <silent> <leader>on :NnnPicker %:p:h<CR>
-let g:which_key_map.o.n = 'nnn' " WhichKey config
+nnoremap <silent> <leader>oN :NnnExplorer %:p:h<CR>
+" WhichKey config
+let g:which_key_map.o.n = 'nnn'
+let g:which_key_map.o.N = 'nnn tree'
 
 " Map <C-h|j|k|l> to window movement
 noremap <C-h> <C-w>h

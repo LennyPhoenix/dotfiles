@@ -57,7 +57,7 @@ modules-center = spotify
 modules-right = filesystem pulseaudio temperature date powermenu
 
 tray-position = right
-tray-padding = 2
+tray-padding = 0
 ;tray-background = #0063ff
 
 wm-restack = bspwm
