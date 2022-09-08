@@ -1,0 +1,4 @@
+- Rofi colours
+- Wired colours
+- BSPWM border colours
+- Dotstrapper

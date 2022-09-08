@@ -1,0 +1,98 @@
+(
+    max_notifications: 0,
+    min_window_width: 256,
+    min_window_height: 32,
+
+    timeout: 10000,
+    poll_interval: 6,
+
+    debug: false,
+    debug_color: Color(r: 0.0, g: 1.0, b: 0.0, a: 1.0),
+    debug_color_alt: Color(r: 1.0, g: 0.0, b: 0.0, a: 1.0),
+
+    layout_blocks: [
+        (
+            name: "root_image",
+            parent: "",
+            hook: Hook(parent_anchor: BR, self_anchor: BR),
+            offset: Vec2(x: -10.0, y: -10.0),
+            // https://github.com/Toqozz/wired-notify/wiki/NotificationBlock
+            params: NotificationBlock((
+                monitor: 0,
+                border_width: 2.0,
+                border_rounding: 2.0,
+                background_color: Color(hex: "#0c0e14"),
+                border_color: Color(hex: "#282828"),
+                border_color_low: Color(hex: "#282828"),
+                border_color_critical: Color(hex: "#fb4934"),
+                border_color_paused: Color(hex: "#fabd2f"),
+
+                gap: Vec2(x: 0.0, y: -2.0),
+                notification_hook: Hook(parent_anchor: TR, self_anchor: BR),
+            )),
+        ),
+
+        (
+            name: "image",
+            parent: "root_image",
+            hook: Hook(parent_anchor: TL, self_anchor: TL),
+            offset: Vec2(x: 0.0, y: 0.0),
+            params: ImageBlock((
+                image_type: Hint,
+                padding: Padding(left: 7.0, right: 0.0, top: 7.0, bottom: 7.0),
+                rounding: 3.0,
+                scale_width: 48,
+                scale_height: 48,
+                filter_mode: Lanczos3,
+            )),
+        ),
+
+        (
+            name: "summary_image",
+            parent: "image",
+            hook: Hook(parent_anchor: MR, self_anchor: BL),
+            offset: Vec2(x: 0.0, y: 0.0),
+            params: TextBlock((
+                text: "%s",
+                font: "DejaVuSans Mono Bold 12",
+                ellipsize: Middle,
+                color: Color(hex: "#f8f8f2"),
+                color_hovered: Color(hex: "#bfbfbf"),
+                padding: Padding(left: 7.0, right: 7.0, top: 7.0, bottom: 0.0),
+                dimensions: (width: (min: 50, max: 150), height: (min: 0, max: 0)),
+            )),
+        ),
+
+        (
+            name: "body_image",
+            parent: "summary_image",
+            hook: Hook(parent_anchor: BL, self_anchor: TL),
+            offset: Vec2(x: 0.0, y: -3.0),
+            params: ScrollingTextBlock((
+                text: "%b",
+                font: "DejaVuSans Mono 10",
+                color: Color(hex: "#f8f8f2"),
+                color_hovered: Color(hex: "#bfbfbf"),
+                padding: Padding(left: 7.0, right: 7.0, top: 0.0, bottom: 7.0),
+                width: (min: 150, max: 250),
+                scroll_speed: 0.1,
+                lhs_dist: 35.0,
+                rhs_dist: 35.0,
+                scroll_t: 1.0,
+            )),
+        ),
+    ],
+
+    // https://github.com/Toqozz/wired-notify/wiki/Shortcuts
+    shortcuts: ShortcutsConfig (
+        notification_interact: 1,
+        notification_close: 2,
+        // notification_closeall: 99,
+        // notification_pause: 99,
+
+        notification_action1: 3,
+        // notification_action2: 99,
+        // notification_action3: 99,
+        // notification_action4: 99,
+    ),
+)

@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/lenny/.local/share/backgrounds/stream.jpg' 
