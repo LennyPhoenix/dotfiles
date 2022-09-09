@@ -58,7 +58,7 @@ cmp.setup {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
-    mapping = cmp.mapping.preset.insert({
+    mapping = cmp.mapping.preset.insert {
         ["<C-Space>"] = cmp.mapping(function()
             if cmp.visible() then
                 cmp.abort()
@@ -93,7 +93,7 @@ cmp.setup {
                 fallback()
             end
         end, { "i", "s" }),
-    }),
+    },
     formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
@@ -138,8 +138,8 @@ cmp.setup.cmdline('/', {
 -- `:` cmdline setup.
 cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
+    sources = cmp.config.sources {
         { name = 'path' },
         { name = 'cmdline' },
-    })
+    }
 })

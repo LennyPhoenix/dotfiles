@@ -80,8 +80,8 @@ local function lsp_keymaps(bufnr)
             i = { "<Cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
         },
 
-        ["]d"] = { "<Cmd>lua vim.diagnostic.goto_next({ border = 'rounded' })<CR>", "Diagnostic" },
-        ["[d"] = { "<Cmd>lua vim.diagnostic.goto_prev({ border = 'rounded' })<CR>", "Diagnostic" },
+        ["]d"] = { "<Cmd>lua vim.diagnostic.goto_next { border = 'rounded' }<CR>", "Diagnostic" },
+        ["[d"] = { "<Cmd>lua vim.diagnostic.goto_prev { border = 'rounded' }<CR>", "Diagnostic" },
 
         K = { "<Cmd>lua vim.lsp.buf.hover()<CR>", "Documentation" },
         ["<C-k>"] = { "<Cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature" },
