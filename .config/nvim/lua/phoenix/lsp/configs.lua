@@ -12,6 +12,7 @@ local servers = {
     "rust_analyzer",
     "pyright",
     "yamlls",
+    "omnisharp",
 }
 
 lsp_installer.setup {
