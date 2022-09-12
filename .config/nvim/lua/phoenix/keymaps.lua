@@ -33,14 +33,14 @@ keymap("n", "<A-h>", "<Cmd>tabp<CR>", noremap)
 -- Move text up and down
 keymap("v", "<M-k>", "<Cmd>m .-2<CR>==", noremap)
 keymap("v", "<M-j>", "<Cmd>m .+1<CR>==", noremap)
--- Paste without writing to register
-keymap("v", "p", "\"_dP", noremap)
-keymap("v", "\"p", "\"_d\"+P", noremap)
 
 -- Visual Block --
 -- Move text up and down
 keymap("x", "<M-j>", "<Cmd>move '>+1<CR>gv-gv", noremap)
 keymap("x", "<M-k>", "<Cmd>move '<-2<CR>gv-gv", noremap)
+
+-- Better paste
+keymap("x", "<Leader>p", "\"_dP", noremap)
 
 -- Terminal --
 -- Better terminal navigation
