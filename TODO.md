@@ -1,4 +1,4 @@
+- Templates for desktop and laptop
 - Rofi colours
 - Wired colours
-- BSPWM border colours
 - Dotstrapper
