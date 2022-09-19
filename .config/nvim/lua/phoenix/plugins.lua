@@ -66,6 +66,7 @@ return require("packer").startup(function(use)
     use("wakatime/vim-wakatime")
     use("akinsho/toggleterm.nvim")
     use("tpope/vim-fugitive")
+    use("windwp/nvim-autopairs")
 
     -- Completion
     use("hrsh7th/nvim-cmp")

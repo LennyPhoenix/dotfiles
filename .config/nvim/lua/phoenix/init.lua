@@ -27,3 +27,7 @@ require("phoenix.indentline")
 require("phoenix.illuminate")
 require("phoenix.toggleterm")
 require("phoenix.alpha")
+require("phoenix.autopairs")
+
+-- TODO:
+-- * Packer config instead of including here for better organisation
