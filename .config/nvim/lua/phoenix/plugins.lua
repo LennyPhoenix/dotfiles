@@ -65,8 +65,11 @@ return require("packer").startup(function(use)
     use("lukas-reineke/indent-blankline.nvim")
     use("wakatime/vim-wakatime")
     use("akinsho/toggleterm.nvim")
-    use("tpope/vim-fugitive")
     use("windwp/nvim-autopairs")
+
+    -- Git
+    use("tpope/vim-fugitive")
+    use("lewis6991/gitsigns.nvim")
 
     -- Completion
     use("hrsh7th/nvim-cmp")

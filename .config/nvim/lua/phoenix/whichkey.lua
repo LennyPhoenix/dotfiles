@@ -56,7 +56,6 @@ local setup = {
 
 local opts = {
     mode = "n",
-    prefix = "<Leader>",
     buffer = nil,
     silent = true,
     noremap = true,
@@ -64,46 +63,68 @@ local opts = {
 }
 
 local mappings = {
-    ["c"] = { "<Cmd>Bdelete<CR>", "Close Buffer" },
-    ["v"] = { "<Cmd>e ~/.config/nvim/init.lua<CR>", "Config" },
-    ["e"] = { "<Cmd>NnnExplorer<CR>", "Explorer" },
-    ["n"] = { "<Cmd>NnnPicker<CR>", "NNN" },
-    ["h"] = { "<Cmd>Alpha<CR>", "Home" },
-    ["g"] = { "<Cmd>Git<CR>", "Git" },
-    ["w"] = { "<Cmd>w<CR>", "Write" },
+    ["<Leader>"] = {
+        c = { "<Cmd>Bdelete<CR>", "Close Buffer" },
+        v = { "<Cmd>e ~/.config/nvim/init.lua<CR>", "Config" },
+        e = { "<Cmd>NnnExplorer<CR>", "Explorer" },
+        n = { "<Cmd>NnnPicker<CR>", "NNN" },
+        h = { "<Cmd>Alpha<CR>", "Home" },
+        w = { "<Cmd>w<CR>", "Write" },
 
-    f = {
-        name = "Find",
-        f = { "<Cmd>Telescope find_files theme=dropdown<CR>", "File" },
-        F = { "<Cmd>Telescope git_files theme=dropdown<CR>", "Git File" },
-        b = { "<Cmd>Telescope buffers theme=dropdown<CR>", "Buffer" },
-        g = { "<Cmd>Telescope live_grep<CR>", "Grep" },
-        p = { "<Cmd>Telescope projects<CR>", "Project" },
-        B = { "<Cmd>Telescope git_branches<CR>", "Branch" },
+        f = {
+            name = "Find",
+            f = { "<Cmd>Telescope find_files theme=dropdown<CR>", "File" },
+            F = { "<Cmd>Telescope git_files theme=dropdown<CR>", "Git File" },
+            b = { "<Cmd>Telescope buffers theme=dropdown<CR>", "Buffer" },
+            g = { "<Cmd>Telescope live_grep<CR>", "Grep" },
+            p = { "<Cmd>Telescope projects<CR>", "Project" },
+            B = { "<Cmd>Telescope git_branches<CR>", "Branch" },
+        },
+
+        l = {
+            name = "LSP",
+            i = { "<Cmd>LspInfo<CR>", "Info" },
+            I = { "<Cmd>LspInstallInfo<CR>", "Installer" },
+        },
+
+        g = {
+            mame = "Git",
+            g = { "<Cmd>Git<CR>", "Open" },
+            h = {
+                name = "Hunk",
+                p = { "<Cmd>Gitsigns preview_hunk<CR>", "Preview" },
+                s = { "<Cmd>Gitsigns stage_hunk<CR>", "Stage" },
+                u = { "<Cmd>Gitsigns undo_stage_hunk<CR>", "Unstage" },
+                R = { "<Cmd>Gitsigns reset_hunk<CR>", "Reset" },
+            },
+            w = { "<Cmd>Gitsigns toggle_word_diff<CR>", "Toggle Word Diff" },
+        },
+
+        p = {
+            name = "Plugins",
+            c = { "<Cmd>PackerCompile<CR>", "Compile" },
+            i = { "<Cmd>PackerInstall<CR>", "Install" },
+            s = { "<Cmd>PackerSync<CR>", "Sync" },
+            S = { "<Cmd>PackerStatus<CR>", "Status" },
+            u = { "<Cmd>PackerUpdate<CR>", "Update" },
+        },
+
+        t = {
+            name = "Terminal",
+            h = { "<Cmd>lua _HTOP_TOGGLE()<CR>", "Htop" },
+            g = { "<Cmd>lua _LAZYGIT_TOGGLE()<CR>", "Git" },
+            t = { "<Cmd>ToggleTerm direction=horizontal<CR>", "Bottom" },
+            T = { "<Cmd>ToggleTerm direction=vertical size=80<CR>", "Right" },
+        }
     },
 
-    l = {
-        name = "LSP",
-        i = { "<Cmd>LspInfo<CR>", "Info" },
-        I = { "<Cmd>LspInstallInfo<CR>", "Installer" },
+    ["]"] = {
+        h = { "<Cmd>Gitsigns next_hunk<CR>", "Git Hunk" },
     },
 
-    p = {
-        name = "Plugins",
-        c = { "<Cmd>PackerCompile<CR>", "Compile" },
-        i = { "<Cmd>PackerInstall<CR>", "Install" },
-        s = { "<Cmd>PackerSync<CR>", "Sync" },
-        S = { "<Cmd>PackerStatus<CR>", "Status" },
-        u = { "<Cmd>PackerUpdate<CR>", "Update" },
+    ["["] = {
+        h = { "<Cmd>Gitsigns prev_hunk<CR>", "Git Hunk" },
     },
-
-    t = {
-        name = "Terminal",
-        h = { "<Cmd>lua _HTOP_TOGGLE()<CR>", "Htop" },
-        g = { "<Cmd>lua _LAZYGIT_TOGGLE()<CR>", "Git" },
-        t = { "<Cmd>ToggleTerm direction=horizontal<CR>", "Bottom" },
-        T = { "<Cmd>ToggleTerm direction=vertical size=80<CR>", "Right" },
-    }
 }
 
 which_key.setup(setup)

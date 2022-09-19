@@ -28,6 +28,7 @@ require("phoenix.illuminate")
 require("phoenix.toggleterm")
 require("phoenix.alpha")
 require("phoenix.autopairs")
+require("phoenix.gitsigns")
 
 -- TODO:
 -- * Packer config instead of including here for better organisation
