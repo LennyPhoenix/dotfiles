@@ -44,6 +44,7 @@ return require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
 
     -- Misc
+    use("lewis6991/impatient.nvim")
     use("folke/which-key.nvim")
     use("ahmedkhalf/project.nvim")
     use("ggandor/lightspeed.nvim")

@@ -6,9 +6,12 @@
 -- |_|                                            By LennyPhoenix
 
 require("phoenix.options")
-require("phoenix.keymaps")
 require("phoenix.plugins")
+require("phoenix.keymaps")
 require("phoenix.colors")
+
+-- Cache
+require("phoenix.impatient")
 
 -- LSP Setup
 require("phoenix.lsp")
