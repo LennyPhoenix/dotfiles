@@ -87,7 +87,10 @@ return require("packer").startup(function(use)
     use("RRethy/vim-illuminate")
 
     -- Start Screen
-    use("mhinz/vim-startify")
+    use {
+        "goolord/alpha-nvim",
+        requires = { "BlakeJC94/alpha-nvim-fortune" },
+    }
 
     -- Telescope
     use {

@@ -68,7 +68,7 @@ local mappings = {
     ["v"] = { "<Cmd>e ~/.config/nvim/init.lua<CR>", "Config" },
     ["e"] = { "<Cmd>NnnExplorer<CR>", "Explorer" },
     ["n"] = { "<Cmd>NnnPicker<CR>", "NNN" },
-    ["h"] = { "<Cmd>Startify<CR>", "Home" },
+    ["h"] = { "<Cmd>Alpha<CR>", "Home" },
     ["g"] = { "<Cmd>Git<CR>", "Git" },
     ["w"] = { "<Cmd>w<CR>", "Write" },
 
@@ -80,14 +80,6 @@ local mappings = {
         g = { "<Cmd>Telescope live_grep<CR>", "Grep" },
         p = { "<Cmd>Telescope projects<CR>", "Project" },
         B = { "<Cmd>Telescope git_branches<CR>", "Branch" },
-    },
-
-    s = {
-        name = "Sessions",
-        l = { "<Cmd>SLoad<CR>", "Load" },
-        s = { "<Cmd>SSave!<CR>", "Save" },
-        c = { "<Cmd>SClose<CR>", "Close" },
-        d = { "<Cmd>SDelete<CR>", "Delete" },
     },
 
     l = {
