@@ -53,10 +53,7 @@ alias la='ls -AF'
 alias l='ls -CF'
 
 alias lsyay="yay -Slq | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk \"{print \$2}\")' | xargs -ro  yay -Sy"
-
-x=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
-alias tdrop="tdrop -w $(expr $x - 4)"
-
+alias tdrop="tdrop -w $(expr $(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1) - 4)"
 alias clipscrot="scrot /tmp/ -e 'xclip -selection clipboard -target image/png -i \$f'"
 
 # Compinstall
