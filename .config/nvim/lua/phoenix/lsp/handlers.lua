@@ -64,7 +64,7 @@ local function lsp_keymaps(bufnr)
                 a = { "<Cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
                 l = { "<Cmd>lua vim.diagnostic.open_float()<CR>", "Line Info" },
                 d = { "<Cmd>lua vim.diagnostic.setloclist()<CR>", "Diagnostics" },
-                f = { "<Cmd>lua vim.lsp.buf.format { async = false }<CR>", "Format" },
+                f = { "<Cmd>lua vim.lsp.buf.format { async = true }<CR>", "Format" },
             },
 
             f = {
@@ -98,7 +98,7 @@ local function lsp_autoformat(client, bufnr)
         vim.api.nvim_create_autocmd("BufWritePre", {
             group = augroup,
             buffer = bufnr,
-            callback = vim.lsp.buf.formatting_sync,
+            callback = function() vim.lsp.buf.format { async = false } end,
         })
     end
 end
