@@ -64,7 +64,7 @@ local function lsp_keymaps(bufnr)
                 a = { "<Cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
                 l = { "<Cmd>lua vim.diagnostic.open_float()<CR>", "Line Info" },
                 d = { "<Cmd>lua vim.diagnostic.setloclist()<CR>", "Diagnostics" },
-                f = { "<Cmd>lua vim.lsp.buf.formatting()<CR>", "Format" },
+                f = { "<Cmd>lua vim.lsp.buf.format { async = false }<CR>", "Format" },
             },
 
             f = {
