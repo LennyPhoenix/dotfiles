@@ -1,24 +1,25 @@
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# set PATH so it includes user's private bin if it exists
+# Update PATH
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# include .cargo/env if it exists
+if [ -d "$HOME/.local/share/gem/ruby/3.0.0/bin" ] ; then
+    PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
+fi
+
 if [ -f "$HOME/.cargo/env" ] ; then
   . "$HOME/.cargo/env"
 fi
 
-# include .poetry/env if it exists
 if [ -f "$HOME/.poetry/env" ] ; then
   . "$HOME/.poetry/env"
 fi
 
-# set GPG_TTY
+if [ -f "$HOME/.ghcup/env" ] ; then
+  . "$HOME/.ghcup/env"
+fi
+
+# GPG setup
 export GPG_TTY=$(tty)
 
 # Default apps
