@@ -1,8 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-updates=$(checkupdates)
+updates=$(checkupdates 2> /dev/null)
+success=$?
 
-if [ -z "$updates" ]
+if [ ! $success -eq 0 ] || [ -z "$updates" ]
 then
   count=0
 else
@@ -11,4 +12,3 @@ else
 fi
 
 echo "%{T1}%{T-} %{T2}$count%{T-}"
-
