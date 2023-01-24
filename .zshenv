@@ -21,13 +21,9 @@ fi
 # set GPG_TTY
 export GPG_TTY=$(tty)
 
-# set BROWSER
+# Default apps
 export BROWSER=brave
-
-# set TERMINAL
 export TERMINAL=alacritty
-
-# set EDITOR
 export EDITOR=nvim
 
 # NNN configuration
