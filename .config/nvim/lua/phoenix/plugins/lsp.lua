@@ -1,6 +1,4 @@
-local M = {}
-
-M.setup = function()
+local function setup()
     local signs = {
         { name = "DiagnosticSignError", text = "" },
         { name = "DiagnosticSignWarn", text = "" },
@@ -42,24 +40,11 @@ M.setup = function()
     })
 end
 
-local function lsp_keymaps(bufnr)
-    local status_ok, which_key = pcall(require, "which-key")
-    if not status_ok then
-        vim.notify("which-key not found, unable to register for lsp")
-        return
-    end
-
-    local opts = {
-        mode = "n",
-        buffer = bufnr,
-        silent = true,
-        noremap = true,
-        nowait = true,
-    }
-
-    local mappings = {
+local function set_keybinds(bufnr)
+    require("which-key").register({
         ["<Leader>"] = {
             l = {
+                name = "Lsp",
                 r = { "<Cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
                 a = { "<Cmd>lua vim.lsp.buf.code_action()<CR>", "Code Actions" },
                 l = { "<Cmd>lua vim.diagnostic.open_float()<CR>", "Line Info" },
@@ -84,38 +69,57 @@ local function lsp_keymaps(bufnr)
         ["[d"] = { "<Cmd>lua vim.diagnostic.goto_prev { border = 'rounded' }<CR>", "Diagnostic" },
 
         K = { "<Cmd>lua vim.lsp.buf.hover()<CR>", "Documentation" },
-        ["<C-k>"] = { "<Cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature" },
+        ["<C-K>"] = { "<Cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature" },
+    }, { buffer = bufnr })
+end
+
+local function config()
+    require("mason-lspconfig").setup()
+
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+    local opts = {
+        on_attach = function(_, bufnr)
+            set_keybinds(bufnr)
+        end,
+        capabilities = capabilities
     }
 
-    which_key.register(mappings, opts)
+    require("mason-lspconfig").setup_handlers {
+        function(server_name)
+            require("lspconfig")[server_name].setup(opts)
+        end,
+        ["lua_ls"] = function()
+            require("neodev").setup()
+            require("lspconfig").lua_ls.setup(opts)
+        end,
+        ["rust_analyzer"] = function()
+            local rt = require("rust-tools")
+            rt.setup {
+                on_attach = function(_, bufnr)
+                    set_keybinds(bufnr)
+                    require("which-key").register({
+                        ["<Leader>a"] = { rt.code_action_group.code_action_group, "Code Actions" },
+                        K = { rt.hover_actions.hover_actions, "Documentation" },
+                    }, { buffer = bufnr })
+                end,
+            }
+        end,
+    }
+
+    setup()
 end
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
-local function lsp_autoformat(client, bufnr)
-    if client.supports_method("textDocument/formatting") then
-        vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            group = augroup,
-            buffer = bufnr,
-            callback = function() vim.lsp.buf.format { async = false } end,
-        })
-    end
-end
-
-M.on_attach = function(client, bufnr)
-    lsp_keymaps(bufnr)
-    lsp_autoformat(client, bufnr)
-end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-    vim.notify "cmp_nvim_lsp not found"
-    return
-end
-
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
-
-return M
+return {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = {
+        "mason.nvim",
+        "which-key.nvim",
+        "telescope.nvim",
+        "hrsh7th/cmp-nvim-lsp",
+        "neovim/nvim-lspconfig",
+        "folke/neodev.nvim",
+        "simrat39/rust-tools.nvim",
+    },
+    config = config
+}

@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd(
 local options = {
     -- Interface
     cmdheight = 1,
-    pumheight = 10, -- pop up menu height
+    pumheight = 10,  -- pop up menu height
     showtabline = 2, -- always show tabs
     termguicolors = true,
     timeoutlen = 300,
@@ -32,11 +32,11 @@ local options = {
     smartindent = true,
     fileencoding = "utf-8",
     swapfile = false, -- this is just annoying
-    undofile = true, -- enable persistent undo
+    undofile = true,  -- enable persistent undo
     updatetime = 300, -- faster completion (4000ms default)
     expandtab = true, -- convert tabs to spaces
-    shiftwidth = 4, -- the number of spaces inserted for each indentation
-    tabstop = 4, -- insert 4 spaces for a tab
+    shiftwidth = 4,   -- the number of spaces inserted for each indentation
+    tabstop = 4,      -- insert 4 spaces for a tab
 
     -- Search
     hlsearch = true,

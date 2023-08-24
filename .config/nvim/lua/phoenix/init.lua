@@ -5,33 +5,41 @@
 -- | .__/|_| |_|\___/ \___|_| |_|_/_/\_(_)_| |_|\_/ |_|_| |_| |_|
 -- |_|                                            By LennyPhoenix
 
+-- Vanilla Settings
 require("phoenix.options")
-require("phoenix.plugins")
 require("phoenix.keymaps")
-require("phoenix.colors")
 
--- Cache
-require("phoenix.impatient")
+-- Bootstrap
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
+end
 
--- LSP Setup
-require("phoenix.lsp")
-
--- Plugin Settings
-require("phoenix.cmp")
-require("phoenix.telescope")
-require("phoenix.whichkey")
-require("phoenix.presence")
-require("phoenix.project")
-require("phoenix.nnn")
-require("phoenix.lualine")
-require("phoenix.tabline")
-require("phoenix.treesitter")
-require("phoenix.indentline")
-require("phoenix.illuminate")
-require("phoenix.toggleterm")
-require("phoenix.alpha")
-require("phoenix.autopairs")
-require("phoenix.gitsigns")
-
--- TODO:
--- * Packer config instead of including here for better organisation
+-- Load Plugins
+vim.opt.rtp:prepend(lazypath)
+require("lazy").setup("phoenix.plugins", {
+    change_detection = {
+        notify = false
+    },
+    performance = {
+        rtp = {
+            disabled_plugins = {
+                "gzip",
+                "matchit",
+                "matchparen",
+                "netrwPlugin",
+                "tarPlugin",
+                "tohtml",
+                "tutor",
+                "zipPlugin",
+            },
+        },
+    },
+})
