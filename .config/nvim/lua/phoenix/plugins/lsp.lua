@@ -99,7 +99,7 @@ local function config()
                 on_attach = function(_, bufnr)
                     set_keybinds(bufnr)
                     require("which-key").register({
-                        ["<Leader>a"] = { rt.code_action_group.code_action_group, "Code Actions" },
+                        ["<Leader>la"] = { rt.code_action_group.code_action_group, "Code Actions" },
                         K = { rt.hover_actions.hover_actions, "Documentation" },
                     }, { buffer = bufnr })
                 end,
