@@ -93,18 +93,18 @@ local function config()
             require("neodev").setup()
             require("lspconfig").lua_ls.setup(opts)
         end,
-        ["rust_analyzer"] = function()
-            local rt = require("rust-tools")
-            rt.setup {
-                on_attach = function(_, bufnr)
-                    set_keybinds(bufnr)
-                    require("which-key").register({
-                        ["<Leader>la"] = { rt.code_action_group.code_action_group, "Code Actions" },
-                        K = { rt.hover_actions.hover_actions, "Documentation" },
-                    }, { buffer = bufnr })
-                end,
-            }
-        end,
+        --["rust_analyzer"] = function()
+        --    local rt = require("rust-tools")
+        --    rt.setup {
+        --        on_attach = function(_, bufnr)
+        --            set_keybinds(bufnr)
+        --            require("which-key").register({
+        --                ["<Leader>la"] = { rt.code_action_group.code_action_group, "Code Actions" },
+        --                K = { rt.hover_actions.hover_actions, "Documentation" },
+        --            }, { buffer = bufnr })
+        --        end,
+        --    }
+        --end,
     }
 
     setup()
