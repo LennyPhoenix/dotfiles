@@ -53,6 +53,7 @@ local function config()
         ["<Leader>"] = {
             v = { "<Cmd>e ~/.config/nvim/init.lua<CR>", "Config" },
             w = { "<Cmd>w<CR>", "Write" },
+            T = { "<Cmd>tabnew<CR>", "New Tab" },
         },
     }
 end
