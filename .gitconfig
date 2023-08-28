@@ -1,11 +1,8 @@
 [user]
 	name = Lenny Critchley
 	email = LennyPhoenixC@gmail.com
-	signingkey = D4C986C47EE21E37
 [init]
 	defaultBranch = main
-[commit]
-	gpgsign = true
 [core]
 	editor = nvim
 	autocrlf = input
