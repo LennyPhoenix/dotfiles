@@ -50,6 +50,7 @@ local function set_keybinds(bufnr)
                 l = { "<Cmd>lua vim.diagnostic.open_float()<CR>", "Line Info" },
                 d = { "<Cmd>lua vim.diagnostic.setloclist()<CR>", "Diagnostics" },
                 f = { "<Cmd>lua vim.lsp.buf.format { async = true }<CR>", "Format" },
+                s = { "<Cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature" },
             },
 
             f = {
@@ -69,7 +70,6 @@ local function set_keybinds(bufnr)
         ["[d"] = { "<Cmd>lua vim.diagnostic.goto_prev { border = 'rounded' }<CR>", "Diagnostic" },
 
         K = { "<Cmd>lua vim.lsp.buf.hover()<CR>", "Documentation" },
-        ["<C-K>"] = { "<Cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature" },
     }, { buffer = bufnr })
 end
 

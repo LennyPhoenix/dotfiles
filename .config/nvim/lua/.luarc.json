@@ -1,0 +1,30 @@
+{
+    "workspace.library": [
+        "/home/lenny/.local/share/nvim/lazy/neodev.nvim/types/nightly",
+        "/usr/share/nvim/runtime/lua",
+        "/home/lenny/.local/share/nvim/lazy/nnn.nvim/lua",
+        "/home/lenny/.local/share/nvim/lazy/lazy.nvim/lua",
+        "/home/lenny/.local/share/nvim/lazy/nvim-cmp/lua",
+        "/home/lenny/.local/share/nvim/lazy/which-key.nvim/lua",
+        "/home/lenny/.local/share/nvim/lazy/cmp-cmdline/lua",
+        "/home/lenny/.local/share/nvim/lazy/cmp-nvim-lsp/lua",
+        "/home/lenny/.local/share/nvim/lazy/rust-tools.nvim/lua",
+        "/home/lenny/.local/share/nvim/lazy/project.nvim/lua",
+        "/home/lenny/.local/share/nvim/lazy/cmp-buffer/lua",
+        "/home/lenny/.local/share/nvim/lazy/telescope.nvim/lua",
+        "/home/lenny/.local/share/nvim/lazy/nvim-snippy/lua",
+        "/home/lenny/.local/share/nvim/lazy/alpha-nvim-fortune/lua",
+        "/home/lenny/.local/share/nvim/lazy/mason-lspconfig.nvim/lua",
+        "/home/lenny/.local/share/nvim/lazy/cmp-path/lua",
+        "/home/lenny/.local/share/nvim/lazy/toggleterm.nvim/lua",
+        "/home/lenny/.local/share/nvim/lazy/neovim-ayu/lua",
+        "/home/lenny/.local/share/nvim/lazy/plenary.nvim/lua",
+        "/home/lenny/.local/share/nvim/lazy/cmp-snippy/lua",
+        "/home/lenny/.local/share/nvim/lazy/alpha-nvim/lua",
+        "/home/lenny/.local/share/nvim/lazy/nvim-lspconfig/lua",
+        "/home/lenny/.local/share/nvim/lazy/neodev.nvim/lua",
+        "/home/lenny/.local/share/nvim/lazy/mason.nvim/lua",
+        "/home/lenny/.config/nvim/lua",
+        "${3rd}/luv/library"
+    ]
+}
