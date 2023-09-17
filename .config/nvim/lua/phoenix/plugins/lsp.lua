@@ -98,13 +98,24 @@ local function config()
         --    rt.setup {
         --        on_attach = function(_, bufnr)
         --            set_keybinds(bufnr)
-        --            require("which-key").register({
-        --                ["<Leader>la"] = { rt.code_action_group.code_action_group, "Code Actions" },
-        --                K = { rt.hover_actions.hover_actions, "Documentation" },
-        --            }, { buffer = bufnr })
+        --            --require("which-key").register({
+        --            --    ["<Leader>la"] = { rt.code_action_group.code_action_group, "Code Actions" },
+        --            --    K = { rt.hover_actions.hover_actions, "Documentation" },
+        --            --}, { buffer = bufnr })
         --        end,
         --    }
         --end,
+    }
+
+    require("mason-null-ls").setup({
+        automatic_installation = false,
+        handlers = {}
+    })
+    require("null-ls").setup {
+        on_attach = function(_, bufnr)
+            set_keybinds(bufnr)
+        end,
+        capabilities = capabilities
     }
 
     setup()
@@ -120,6 +131,8 @@ return {
         "neovim/nvim-lspconfig",
         "folke/neodev.nvim",
         "simrat39/rust-tools.nvim",
+        "jay-babu/mason-null-ls.nvim",
+        "jose-elias-alvarez/null-ls.nvim"
     },
     config = config
 }
