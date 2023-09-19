@@ -4,7 +4,11 @@
 
 # Xorg config
 xsetroot -cursor_name left_ptr &
-setxkbmap -option compose:menu
+setxkbmap -option compose:ralt
+
+# xss
+xset s 60 120
+xss-lock -n $HOME/.config/bspwm/scripts/dim-screen.sh -- smokescreen
 
 # Keybinds
 pgrep -x sxhkd > /dev/null || sxhkd &
@@ -41,16 +45,17 @@ picom -CGb & # compositor
 wired & # notifications
 ~/.config/polybar/launch.sh & #TODO: spotify
 /usr/lib/geoclue-2.0/demos/agent & # geoclue (for redshift)
-easyeffects --gapplication-service & # mic noise reduction
 syncthing serve --no-browser & # file sync
 
 # Delayed
 sleep 3
 redshift-gtk & # night mode
 nm-applet & # networks tray icon
-blueman-applet & # bluetooth tray icon
-steam -silent & # steam
-discord --start-minimized & # discord
+caffeine &
+/usr/lib/ugee-pentablet/ugee-pentablet.sh /mini & # drawing tablet driver
+#blueman-applet & # bluetooth tray icon
+#steam -silent & # steam
+#discord --start-minimized & # discord
 
 # Low battery notifier
 ~/.config/bspwm/scripts/low_bat_notifier.sh

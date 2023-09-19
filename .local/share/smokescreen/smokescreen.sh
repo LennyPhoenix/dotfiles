@@ -6,6 +6,13 @@
 # - imagemagick
 # - i3lock
 
+# Abort if screen is already locked
+pgrep i3lock
+if [[ $? -eq 0 ]] 
+then
+    exit 0
+fi
+
 # Settings
 output="/tmp/lockimgbg"
 scale_factor=8
