@@ -29,7 +29,7 @@ super + p
 
 # lock screen
 super + Escape
-     ~/.config/bspwm/scripts/i3lock-fancy/i3lock-fancy.sh
+     smokescreen
 
 # make sxhkd reload its configuration files:
 super + shift + r
