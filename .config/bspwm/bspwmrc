@@ -5,10 +5,7 @@
 # Xorg config
 xsetroot -cursor_name left_ptr &
 setxkbmap -option compose:ralt
-
-# xss
 xset s 60 120
-xss-lock -n $HOME/.config/bspwm/scripts/dim-screen.sh -- smokescreen
 
 # Keybinds
 pgrep -x sxhkd > /dev/null || sxhkd &
@@ -39,6 +36,7 @@ bspc rule -a Steam desktop='^8' follow=off focus=off
 bspc rule -a discord desktop='^9'
 
 # Autostart
+xss-lock -n $HOME/.config/bspwm/scripts/dim-screen.sh -- smokescreen & # screensaver
 lxpolkit & # polkit auth agent
 sh ~/.screenlayout/monitor.sh & # arandr
 picom -CGb & # compositor
