@@ -50,7 +50,7 @@ sleep 3
 redshift-gtk & # night mode
 nm-applet & # networks tray icon
 caffeine &
-/usr/lib/ugee-pentablet/ugee-pentablet.sh /mini & # drawing tablet driver
+bash /usr/lib/ugee-pentablet/ugee-pentablet.sh /mini & # drawing tablet driver
 #blueman-applet & # bluetooth tray icon
 #steam -silent & # steam
 #discord --start-minimized & # discord
