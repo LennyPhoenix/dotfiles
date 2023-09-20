@@ -17,11 +17,11 @@ local function config()
     dashboard.section.buttons.val = {
         dashboard.button("e", "  New file", "<Cmd>ene<CR>"),
         dashboard.button("p", "  Find project", "<Cmd>Telescope projects<CR>"),
-        dashboard.button("f", "  Find file", "<Cmd>Telescope find_files<CR>"),
-        dashboard.button("r", "  Recently used files", "<Cmd>Telescope oldfiles<CR>"),
+        dashboard.button("f", "󰈞  Find file", "<Cmd>Telescope find_files<CR>"),
+        dashboard.button("r", "  Recently used files", "<Cmd>Telescope oldfiles<CR>"),
         dashboard.button("t", "  Find text", "<Cmd>Telescope live_grep<CR>"),
         dashboard.button("v", "  Configuration", "<Cmd>e ~/.config/nvim/init.lua<CR>"),
-        dashboard.button("q", "  Quit", "<Cmd>qa<CR>"),
+        dashboard.button("q", "󰗼  Quit", "<Cmd>qa<CR>"),
     }
 
     local fortune = require("alpha.fortune")
