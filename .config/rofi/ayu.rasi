@@ -1,0 +1,41 @@
+/*******************************************************
+ * ROFI Ayu Dark Theme
+ *******************************************************/
+* {
+    empty:                       rgba ( 0, 0, 0, 0 % );
+    
+    foreground:                  rgba ( 203, 204, 198, 100 % );
+
+    normal-foreground:           @foreground;
+    active-foreground:           rgba ( 255, 167, 89, 100% );
+    urgent-foreground:           rgba ( 255, 51, 51, 100 % );
+
+    alternate-normal-foreground: @normal-foreground;
+    alternate-active-foreground: @active-foreground;
+    alternate-urgent-foreground: @urgent-foreground;
+
+    selected-normal-foreground:  rgba ( 115, 208, 255, 100 % );
+    selected-active-foreground:  @selected-normal-foreground;
+    selected-urgent-foreground:  @selected-normal-foreground;
+
+    background:                  rgba ( 10, 14, 20, 88 % );
+
+    normal-background:           @empty;
+    active-background:           @normal-background;
+    urgent-background:           @normal-background;
+
+    alternate-normal-background: @normal-background;
+    alternate-active-background: @active-background;
+    alternate-urgent-background: @urgent-background;
+
+    selected-normal-background:  rgba ( 0, 1, 10, 100 % );
+    selected-active-background:  @selected-normal-background;
+    selected-urgent-background:  @selected-normal-background;
+
+    red:                         rgba ( 243, 74, 74, 100 % );
+    blue:                        rgba ( 115, 208, 255, 100 % );
+    border-color:                @blue;
+    separatorcolor:              @empty;
+    background-color:            @empty;
+    spacing:                     2;
+}

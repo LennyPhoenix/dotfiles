@@ -15,9 +15,7 @@ super + shift + {Return,m}
 
 # program launcher
 super + space
-	rofi -combi-modi window,drun,run -show combi -line-padding 4 \
-                -columns 2 -padding 60 -hide-scrollbar -terminal alacritty \
-                -show-icons -drun-icon-theme "Papirus-X-D" -font "Dejavu Sans Mono 11"
+	rofi -combi-modi window,drun,run -show combi -terminal alacritty
 
 # password manager
 super + shift + slash

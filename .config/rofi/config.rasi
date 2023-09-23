@@ -4,26 +4,26 @@
  *******************************************************/
 
 configuration {
-    font:				"Sourcecode Pro Regular 10";
+    font:				    "Dejavu Sans Mono 12";
     show-icons:				true;
-    icon-theme:				"Arc-X-D";
-    display-drun:			"Apps";
-    drun-display-format:		"{name}";
+    icon-theme:				"Papirus-X-D";
+    display-drun:			"launch";
+    drun-display-format:	"{name}";
     scroll-method:			0;
-    disable-history:			false;
-    sidebar-mode:			false;
+    disable-history:		false;
+    sidebar-mode:			true;
 }
 
-@import "~/.config/rofi/arc_dark_transparent_colors.rasi"
+@import "~/.config/rofi/ayu.rasi"
 
 window {
     background-color: @background;
-    border:           0;
-    padding:          30;
+    border:           1;
+    padding:          15;
 }
 listview {
-    lines:                          10;
-    columns:                        3;
+    lines:   10;
+    columns: 2;
 }
 mainbox {
     border:  0;
