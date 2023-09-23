@@ -17,7 +17,7 @@ fi
 output="/tmp/lockimgbg"
 scale_factor=6
 blur="8x4"
-brightness_threshold=33000
+brightness_threshold=34000
 light_icon="$HOME/.local/share/smokescreen/circlelock.png"
 dark_icon="$HOME/.local/share/smokescreen/circlelockdark.png"
 
