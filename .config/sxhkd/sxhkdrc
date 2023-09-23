@@ -16,8 +16,8 @@ super + shift + {Return,m}
 # program launcher
 super + space
 	rofi -combi-modi window,drun,run -show combi -line-padding 4 \
-                -columns 2 -padding 50 -hide-scrollbar -terminal alacritty \
-                -show-icons -drun-icon-theme "Papirus-X-D" -font "Droid Sans Regular 10"
+                -columns 2 -padding 60 -hide-scrollbar -terminal alacritty \
+                -show-icons -drun-icon-theme "Papirus-X-D" -font "Dejavu Sans Mono 11"
 
 # password manager
 super + shift + slash
