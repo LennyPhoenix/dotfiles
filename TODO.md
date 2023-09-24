@@ -1,4 +1,3 @@
-- Templates for desktop and laptop
-- Rofi colours
-- Wired colours
+- Make `dim_screen.sh` also run during automatic smokescreen
+  - CLI flag?
 - Dotstrapper
