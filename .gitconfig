@@ -1,6 +1,7 @@
 [user]
 	name = Lenny Critchley
 	email = LennyPhoenixC@gmail.com
+	signingkey = 0696B34FE58A60FE
 [init]
 	defaultBranch = main
 [core]
@@ -19,3 +20,5 @@
 	helper = !/usr/bin/gh auth git-credential
 [pull]
 	rebase = false
+[commit]
+	gpgsign = true
