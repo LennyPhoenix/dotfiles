@@ -21,6 +21,10 @@ super + space
 super + shift + slash
 	bwmenu
 
+# emoji keyboard
+super + shift + period
+    rofi -modi emoji -show emoji
+
 # power menu
 super + p
      ~/.config/rofi/powermenu.sh
