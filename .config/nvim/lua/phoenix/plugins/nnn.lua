@@ -13,7 +13,7 @@ local function config()
             cmd = "nnn",
             width = 28,
             side = "topleft",
-            session = "", -- or "global" / "local" / "shared"
+            session = "global", -- or "global" / "local" / "shared"
             tabs = true,
         },
         picker = {

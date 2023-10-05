@@ -8,6 +8,7 @@ end
 local function config()
     local cmp = require("cmp")
     local snippy = require("snippy")
+    require("copilot_cmp").setup()
     cmp.setup {
         snippet = {
             expand = function(args)
@@ -53,6 +54,7 @@ local function config()
             end, { "i", "s" }),
         },
         sources = {
+            { name = "copilot" },
             { name = "nvim_lsp" },
             { name = "snippy" },
             { name = "path" },
@@ -94,6 +96,7 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "dcampos/cmp-snippy",
+        "zbirenbaum/copilot-cmp",
         "nvim-snippy"
     },
     config = config
