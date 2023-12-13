@@ -1,6 +1,6 @@
 window:
   dynamic_padding: true
-  opacity: 0.875
+  opacity: 0.8784
 
 # Colour Schemes
 schemes:
