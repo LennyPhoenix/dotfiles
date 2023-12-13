@@ -30,6 +30,7 @@ bspc config external_rules_command $HOME/.config/bspwm/scripts/custom_rules.sh
 
 # Rules
 bspc rule -a mpv state=floating sticky=on locked=on
+bspc rule -a QjackCtl state=floating
 bspc rule -a Brave-browser desktop='^2'
 bspc rule -a obsidian desktop='^7'
 bspc rule -a Steam desktop='^8' follow=off focus=off
