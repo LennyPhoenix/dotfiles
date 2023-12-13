@@ -93,18 +93,34 @@ local function config()
             require("neodev").setup()
             require("lspconfig").lua_ls.setup(opts)
         end,
-        --["rust_analyzer"] = function()
-        --    local rt = require("rust-tools")
-        --    rt.setup {
-        --        on_attach = function(_, bufnr)
-        --            set_keybinds(bufnr)
-        --            --require("which-key").register({
-        --            --    ["<Leader>la"] = { rt.code_action_group.code_action_group, "Code Actions" },
-        --            --    K = { rt.hover_actions.hover_actions, "Documentation" },
-        --            --}, { buffer = bufnr })
-        --        end,
-        --    }
-        --end,
+        ["rust_analyzer"] = function()
+            local rt = require("rust-tools")
+            rt.setup {
+                server = {
+                    on_attach = function(_, bufnr)
+                        set_keybinds(bufnr)
+                        require("which-key").register({
+                            ["<Leader>l"] = {
+                                ["a"] = { rt.code_action_group.code_action_group, "Code Actions" },
+                                ["i"] = {
+                                    name = "Inlay Hints",
+                                    ["e"] = { rt.inlay_hints.enable, "Enable" },
+                                    ["d"] = { rt.inlay_hints.disable, "Disable" }
+                                },
+                                ["c"] = { rt.open_cargo_toml.open_cargo_toml, "Open Cargo.toml" },
+                                ["p"] = { rt.parent_module.parent_module, "Parent Module" },
+                                ["R"] = { rt.runnables.runnables, "Runnables" },
+                                ["j"] = { rt.join_lines.join_lines, "Join Lines" },
+                                ["W"] = { rt.workspace_refresh.reload_workspace, "Workspace Refresh" },
+                            },
+                            ["<A-k>"] = { function() rt.move_item.move_item(true) end, "Move item up" },
+                            ["<A-j>"] = { function() rt.move_item.move_item(false) end, "Move item down" },
+                            K = { rt.hover_actions.hover_actions, "Documentation" },
+                        }, { buffer = bufnr })
+                    end,
+                }
+            }
+        end,
     }
 
     require("mason-null-ls").setup({
