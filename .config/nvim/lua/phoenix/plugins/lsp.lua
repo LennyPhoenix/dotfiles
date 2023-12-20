@@ -97,6 +97,7 @@ local function config()
         end,
         ["rust_analyzer"] = function()
             local rt = require("rust-tools")
+            -- TODO: Move to new file
             rt.setup {
                 server = {
                     on_attach = function(_, bufnr)
@@ -112,6 +113,7 @@ local function config()
                                 ["c"] = { rt.open_cargo_toml.open_cargo_toml, "Open Cargo.toml" },
                                 ["p"] = { rt.parent_module.parent_module, "Parent Module" },
                                 ["R"] = { rt.runnables.runnables, "Runnables" },
+                                ["D"] = { rt.debuggables.debuggables, "Debuggables" },
                                 ["j"] = { rt.join_lines.join_lines, "Join Lines" },
                                 ["W"] = { rt.workspace_refresh.reload_workspace, "Workspace Refresh" },
                             },
@@ -148,7 +150,7 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "neovim/nvim-lspconfig",
         "folke/neodev.nvim",
-        "simrat39/rust-tools.nvim",
+        "LennyPhoenix/rust-tools.nvim",
         "jay-babu/mason-null-ls.nvim",
         "jose-elias-alvarez/null-ls.nvim"
     },

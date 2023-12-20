@@ -14,23 +14,31 @@ local function keybinds()
 end
 
 local function config()
-    require('mason-nvim-dap').setup({
+    require("mason-nvim-dap").setup {
         handlers = {
             function(dap_config)
-                require('mason-nvim-dap').default_setup(dap_config)
+                require("mason-nvim-dap").default_setup(dap_config)
             end,
         },
-    })
-    require("dapui").setup()
+    }
 
-    vim.fn.sign_define('DapBreakpoint', { text = '#', texthl = 'error', linehl = '', numhl = '' })
-    vim.fn.sign_define('DapStopped', { text = '▶️', texthl = 'warn', linehl = '', numhl = '' })
+    local dap, dapui = require("dap"), require("dapui")
+
+    dapui.setup()
+
+    vim.fn.sign_define("DapBreakpoint", { text = "#", texthl = "error", linehl = "", numhl = "" })
+    vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "warn", linehl = "", numhl = "" })
+
+    dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+    end
 
     keybinds()
 end
 
 return {
-    "jay-babu/mason-nvim-dap.nvim",
+    --"jay-babu/mason-nvim-dap.nvim",
+    "LennyPhoenix/mason-nvim-dap.nvim",
     dependencies = {
         "mason.nvim",
         "which-key.nvim",
