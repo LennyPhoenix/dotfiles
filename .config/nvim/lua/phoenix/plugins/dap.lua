@@ -24,10 +24,54 @@ local function config()
 
     local dap, dapui = require("dap"), require("dapui")
 
-    dapui.setup()
+    dapui.setup {
+        layouts = {
+            {
+                elements = {
+                    {
+                        id = "scopes",
+                        size = 0.25
+                    }, {
+                        id = "breakpoints",
+                        size = 0.25
+                    }, {
+                        id = "stacks",
+                        size = 0.25
+                    }, {
+                        id = "watches",
+                        size = 0.25
+                    }
+                },
+                position = "left",
+                size = 65
+            },
+            {
+                elements = {
+                    {
+                        id = "repl",
+                        size = 0.5
+                    }, {
+                        id = "console",
+                        size = 0.5
+                    }
+                },
+                position = "bottom",
+                size = 20
+        } },
+    }
 
     vim.fn.sign_define("DapBreakpoint", { text = "#", texthl = "error", linehl = "", numhl = "" })
     vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "warn", linehl = "", numhl = "" })
+
+    vim.api.nvim_create_autocmd("BufWinEnter", {
+        pattern = "\\[dap-terminal\\]*",
+        callback = vim.schedule_wrap(function(args)
+            local window = vim.fn.bufwinid(args.buf)
+            if window ~= nil then
+                vim.api.nvim_set_current_win(window)
+            end
+        end)
+    })
 
     vim.api.nvim_create_autocmd("BufEnter", {
         pattern = "\\[dap-terminal\\]*",
