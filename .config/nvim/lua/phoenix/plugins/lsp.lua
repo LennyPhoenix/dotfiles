@@ -90,7 +90,9 @@ local function config()
             require("lspconfig")[server_name].setup(opts)
         end,
         ["lua_ls"] = function()
-            require("neodev").setup()
+            require("neodev").setup {
+                library = { plugins = { "nvim-dap-ui" }, types = true },
+            }
             require("lspconfig").lua_ls.setup(opts)
         end,
         ["rust_analyzer"] = function()
