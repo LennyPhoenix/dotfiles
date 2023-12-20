@@ -29,6 +29,17 @@ local function config()
     vim.fn.sign_define("DapBreakpoint", { text = "#", texthl = "error", linehl = "", numhl = "" })
     vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "warn", linehl = "", numhl = "" })
 
+    vim.api.nvim_create_autocmd("BufWinEnter", {
+        pattern = "\\[dap-terminal\\]*",
+        callback = vim.schedule_wrap(function(args)
+            vim.notify("BufWinEnter")
+            local window = vim.fn.bufwinid(args.buf)
+            if window ~= nil then
+                vim.api.nvim_set_current_win(window)
+            end
+        end)
+    })
+
     dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
     end
