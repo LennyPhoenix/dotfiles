@@ -187,3 +187,7 @@ XF86MonBrightnessDown
 
 ctrl + {_,super + ,shift + }Print
   scrot { ,-u,-fs} /tmp/ -e 'xclip -selection clipboard -target image/png -i $f'
+
+# XProp
+super + shift + x 
+    echo $(xprop | grep WM_CLASS) > /tmp/wmclass
