@@ -52,6 +52,8 @@ local function config()
         htop:toggle()
     end
 
+    vim.cmd("autocmd! BufEnter term://* startinsert")
+
     require("which-key").register {
         ["<Leader>"] = {
             t = {

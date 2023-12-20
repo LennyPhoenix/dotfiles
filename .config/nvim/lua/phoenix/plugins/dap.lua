@@ -29,14 +29,10 @@ local function config()
     vim.fn.sign_define("DapBreakpoint", { text = "#", texthl = "error", linehl = "", numhl = "" })
     vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "warn", linehl = "", numhl = "" })
 
-    vim.api.nvim_create_autocmd("BufWinEnter", {
+    vim.api.nvim_create_autocmd("BufEnter", {
         pattern = "\\[dap-terminal\\]*",
-        callback = vim.schedule_wrap(function(args)
-            vim.notify("BufWinEnter")
-            local window = vim.fn.bufwinid(args.buf)
-            if window ~= nil then
-                vim.api.nvim_set_current_win(window)
-            end
+        callback = vim.schedule_wrap(function()
+            vim.cmd("startinsert")
         end)
     })
 
