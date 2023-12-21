@@ -29,6 +29,13 @@ keymap("n", "<S-h>", "<Cmd>bprevious<CR>", noremap)
 keymap("n", "<A-l>", "<Cmd>tabn<CR>", noremap)
 keymap("n", "<A-h>", "<Cmd>tabp<CR>", noremap)
 
+-- Insert --
+-- Navigate windows
+keymap("i", "<C-h>", "<C-o><C-w>h", noremap)
+keymap("i", "<C-j>", "<C-o><C-w>j", noremap)
+keymap("i", "<C-k>", "<C-o><C-w>k", noremap)
+keymap("i", "<C-l>", "<C-o><C-w>l", noremap)
+
 -- Visual --
 -- Move text up and down
 keymap("v", "<M-k>", "<Cmd>m .-2<CR>==", noremap)
