@@ -88,8 +88,7 @@ local function config()
 end
 
 return {
-    --"jay-babu/mason-nvim-dap.nvim",
-    "LennyPhoenix/mason-nvim-dap.nvim",
+    "jay-babu/mason-nvim-dap.nvim",
     dependencies = {
         "mason.nvim",
         "which-key.nvim",
