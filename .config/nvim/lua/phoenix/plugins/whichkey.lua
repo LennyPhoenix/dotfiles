@@ -54,11 +54,13 @@ local function config()
             v = { "<Cmd>e ~/.config/nvim/init.lua<CR>", "Config" },
             w = { "<Cmd>w<CR>", "Write" },
             T = { "<Cmd>tabnew<CR>", "New Tab" },
+            p = { "<Cmd>Lazy<CR>", "Lazy" },
         },
     }
 end
 
 return {
     "folke/which-key.nvim",
+    dependencies = { "folke/lazy.nvim" },
     config = config
 }
