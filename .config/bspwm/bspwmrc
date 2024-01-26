@@ -30,9 +30,6 @@ bspc config active_border_color "#0c0e14"
 bspc config focused_border_color "#73d0ff"
 bspc config normal_border_color "#b77ee0"
 
-# Fix for spotify rules:
-bspc config external_rules_command $HOME/.config/bspwm/scripts/custom_rules.sh
-
 # Rules
 bspc rule -a mpv state=floating sticky=on locked=on
 bspc rule -a QjackCtl state=floating
@@ -40,6 +37,7 @@ bspc rule -a Brave-browser desktop='^2'
 bspc rule -a obsidian desktop='^7'
 bspc rule -a Steam desktop='^8' follow=off focus=off
 bspc rule -a discord desktop='^9'
+bspc rule -a Spotify desktop='^10'
 
 # Autostart
 xss-lock -n $HOME/.config/bspwm/scripts/dim-screen.sh -- smokescreen & # screensaver
