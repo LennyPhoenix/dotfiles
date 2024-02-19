@@ -77,7 +77,9 @@ local function setup_rust()
     vim.g.rustaceanvim = {
         server = {
             on_attach = function(_, bufnr)
+                vim.lsp.inlay_hint.enable(bufnr, true)
                 set_keybinds(bufnr)
+
                 require("which-key").register({
                     ["<Leader>l"] = {
                         a = { "<Cmd>RustLsp codeAction<CR>", "Code Actions" },
@@ -87,6 +89,11 @@ local function setup_rust()
                         D = { "<Cmd>RustLsp debuggables", "Debuggables" },
                         j = { "<Cmd>RustLsp joinLines<CR>", "Join Lines" },
                         l = { "<Cmd>RustLsp renderDiagnostic<CR>", "Line Info" },
+                        i = {
+                            name = "Inlay Hints",
+                            e = { function() vim.lsp.inlay_hint.enable(bufnr, true) end, "Enable" },
+                            d = { function() vim.lsp.inlay_hint.enable(bufnr, false) end, "Disable" },
+                        },
                     },
                     ["<A-k>"] = { "<Cmd>RustLsp moveItem up<CR>", "Move item up" },
                     ["<A-j>"] = { "<Cmd>RustLsp moveItem down<CR>", "Move item down" },
@@ -119,7 +126,7 @@ local function config()
             }
             require("lspconfig").lua_ls.setup(opts)
         end,
-        ["rust_analyzer"] = setup_rust,
+        ["rust_analyzer"] = function() end, -- overwrite lspconfig
     }
 
     require("mason-null-ls").setup({
@@ -132,6 +139,8 @@ local function config()
         end,
         capabilities = capabilities
     }
+
+    setup_rust()
 
     setup()
 end
