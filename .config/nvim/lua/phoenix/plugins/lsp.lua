@@ -74,33 +74,26 @@ local function set_keybinds(bufnr)
 end
 
 local function setup_rust()
-    local rt = require("rust-tools")
-
-    rt.setup {
+    vim.g.rustaceanvim = {
         server = {
             on_attach = function(_, bufnr)
                 set_keybinds(bufnr)
                 require("which-key").register({
                     ["<Leader>l"] = {
-                        ["a"] = { rt.code_action_group.code_action_group, "Code Actions" },
-                        ["i"] = {
-                            name = "Inlay Hints",
-                            ["e"] = { rt.inlay_hints.enable, "Enable" },
-                            ["d"] = { rt.inlay_hints.disable, "Disable" }
-                        },
-                        ["c"] = { rt.open_cargo_toml.open_cargo_toml, "Open Cargo.toml" },
-                        ["p"] = { rt.parent_module.parent_module, "Parent Module" },
-                        ["R"] = { rt.runnables.runnables, "Runnables" },
-                        ["D"] = { rt.debuggables.debuggables, "Debuggables" },
-                        ["j"] = { rt.join_lines.join_lines, "Join Lines" },
-                        ["W"] = { rt.workspace_refresh.reload_workspace, "Workspace Refresh" },
+                        a = { "<Cmd>RustLsp codeAction<CR>", "Code Actions" },
+                        c = { "<Cmd>RustLsp openCargo<CR>", "Open Cargo.toml" },
+                        p = { "<Cmd>RustLsp parentModule<CR>", "Parent Module" },
+                        R = { "<Cmd>RustLsp runnables", "Runnables" },
+                        D = { "<Cmd>RustLsp debuggables", "Debuggables" },
+                        j = { "<Cmd>RustLsp joinLines<CR>", "Join Lines" },
+                        l = { "<Cmd>RustLsp renderDiagnostic<CR>", "Line Info" },
                     },
-                    ["<A-k>"] = { function() rt.move_item.move_item(true) end, "Move item up" },
-                    ["<A-j>"] = { function() rt.move_item.move_item(false) end, "Move item down" },
-                    K = { rt.hover_actions.hover_actions, "Documentation" },
+                    ["<A-k>"] = { "<Cmd>RustLsp moveItem up<CR>", "Move item up" },
+                    ["<A-j>"] = { "<Cmd>RustLsp moveItem down<CR>", "Move item down" },
+                    K = { "<Cmd>RustLsp hover actions<CR>", "Documentation" },
                 }, { buffer = bufnr })
             end,
-        }
+        },
     }
 end
 
@@ -152,7 +145,7 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "neovim/nvim-lspconfig",
         "folke/neodev.nvim",
-        "LennyPhoenix/rust-tools.nvim",
+        "mrcjkb/rustaceanvim",
         "jay-babu/mason-null-ls.nvim",
         "jose-elias-alvarez/null-ls.nvim"
     },
