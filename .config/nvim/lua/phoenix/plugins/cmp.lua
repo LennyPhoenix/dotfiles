@@ -15,10 +15,7 @@ local function config()
                 snippy.expand_snippet(args.body)
             end
         },
-        window = {
-            completion = cmp.config.window.bordered(),
-            documentation = cmp.config.window.bordered(),
-        },
+        window = cmp.config.window.bordered(),
         mapping = cmp.mapping.preset.insert {
             ["<C-Space>"] = cmp.mapping(function()
                 if cmp.visible() then
@@ -58,7 +55,6 @@ local function config()
             { name = "nvim_lsp" },
             { name = "snippy" },
             { name = "path" },
-            { name = "buffer" },
         },
         confirm_opts = {
             behavior = cmp.ConfirmBehavior.Replace,
