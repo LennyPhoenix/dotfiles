@@ -1,3 +1,9 @@
 - Make `dim_screen.sh` also run during automatic smokescreen
   - CLI flag?
-- Dotstrapper
+- Fix phoenix.nvim terminal behaviour
+  - Make space+t+t open big panel, or harpoon or something
+  - Should default to insert mode
+  - Shouldn't do the weird right-scroll thing
+- Fix nvim cmp autofill
+  - Style box correctly
+  - Make autofill behaviour less annoying
