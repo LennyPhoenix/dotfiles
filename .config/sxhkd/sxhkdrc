@@ -8,10 +8,10 @@ super + Return
 
 # dropdown windows
 # second line is some black-magic fuckery to get the window to fit correctly
-super + shift + {Return,m}
+super + shift + {Return,m,p}
 	tdrop -aA -y 28 \
 	-w $(expr $(xrandr --current | grep '*' | uniq | awk '\{print $1\}' | cut -d 'x' -f1) - 4) \
-	{alacritty,pavucontrol}
+	{alacritty,pavucontrol,alacritty -T "pms" -e "pms"}
 
 # program launcher
 super + space
