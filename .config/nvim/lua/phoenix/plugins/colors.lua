@@ -8,7 +8,7 @@ return {
 
         require("ayu").setup({
             overrides = {
-                --LspInlayHint = { fg = colors.comment }
+                LspInlayHint = { fg = colors.comment }
             }
         })
         require("ayu").colorscheme()
