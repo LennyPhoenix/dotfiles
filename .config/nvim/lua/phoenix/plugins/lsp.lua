@@ -83,7 +83,7 @@ local function setup_rust()
     vim.g.rustaceanvim = {
         server = {
             on_attach = function(_, bufnr)
-                vim.lsp.inlay_hint.enable(bufnr, true)
+                vim.lsp.inlay_hint.enable(true)
                 set_keybinds(bufnr)
 
                 require("which-key").register({
@@ -97,8 +97,8 @@ local function setup_rust()
                         l = { "<Cmd>RustLsp renderDiagnostic<CR>", "Line Info" },
                         i = {
                             name = "Inlay Hints",
-                            e = { function() vim.lsp.inlay_hint.enable(bufnr, true) end, "Enable" },
-                            d = { function() vim.lsp.inlay_hint.enable(bufnr, false) end, "Disable" },
+                            e = { function() vim.lsp.inlay_hint.enable(true) end, "Enable" },
+                            d = { function() vim.lsp.inlay_hint.enable(false) end, "Disable" },
                         },
                     },
                     ["<A-k>"] = { "<Cmd>RustLsp moveItem up<CR>", "Move item up" },
