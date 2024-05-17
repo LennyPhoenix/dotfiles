@@ -18,6 +18,7 @@ local options = {
     number = true,
     signcolumn = "yes",
     wrap = false,
+    linebreak = true,
     cursorline = true,
     hidden = true,
 
