@@ -91,8 +91,8 @@ local function setup_rust()
                         a = { "<Cmd>RustLsp codeAction<CR>", "Code Actions" },
                         c = { "<Cmd>RustLsp openCargo<CR>", "Open Cargo.toml" },
                         p = { "<Cmd>RustLsp parentModule<CR>", "Parent Module" },
-                        R = { "<Cmd>RustLsp runnables", "Runnables" },
-                        D = { "<Cmd>RustLsp debuggables", "Debuggables" },
+                        R = { "<Cmd>RustLsp runnables<CR>", "Runnables" },
+                        D = { "<Cmd>RustLsp debuggables<CR>", "Debuggables" },
                         j = { "<Cmd>RustLsp joinLines<CR>", "Join Lines" },
                         l = { "<Cmd>RustLsp renderDiagnostic<CR>", "Line Info" },
                         i = {
@@ -107,6 +107,12 @@ local function setup_rust()
                 }, { buffer = bufnr })
             end,
         },
+        tools = {
+            float_win_config = {
+                border = "rounded",
+                style = "minimal",
+            },
+        }
     }
 end
 
