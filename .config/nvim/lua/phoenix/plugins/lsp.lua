@@ -162,7 +162,7 @@ return {
         "folke/neodev.nvim",
         "mrcjkb/rustaceanvim",
         "jay-babu/mason-null-ls.nvim",
-        "jose-elias-alvarez/null-ls.nvim"
+        "nvimtools/none-ls.nvim"
     },
     config = config
 }
