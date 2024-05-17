@@ -30,17 +30,20 @@ local function config()
                 elements = {
                     {
                         id = "scopes",
-                        size = 0.25
-                    }, {
+                        size = 0.25,
+                    },
+                    {
                         id = "breakpoints",
-                        size = 0.25
-                    }, {
+                        size = 0.25,
+                    },
+                    {
                         id = "stacks",
-                        size = 0.25
-                    }, {
+                        size = 0.25,
+                    },
+                    {
                         id = "watches",
-                        size = 0.25
-                    }
+                        size = 0.25,
+                    },
                 },
                 position = "left",
                 size = 65
@@ -50,14 +53,16 @@ local function config()
                     {
                         id = "repl",
                         size = 0.5
-                    }, {
+                    },
+                    {
                         id = "console",
                         size = 0.5
-                    }
+                    },
                 },
                 position = "bottom",
                 size = 20
-        } },
+            },
+        }
     }
 
     vim.fn.sign_define("DapBreakpoint", { text = "#", texthl = "error", linehl = "", numhl = "" })
@@ -94,6 +99,7 @@ return {
         "which-key.nvim",
         "mfussenegger/nvim-dap",
         "rcarriga/nvim-dap-ui",
+        "nvim-neotest/nvim-nio"
     },
     config = config
 }
