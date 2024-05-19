@@ -1,5 +1,5 @@
 local function setup()
-    local config = {
+    vim.diagnostic.config {
         virtual_text = true,
         signs = {
             text = {
@@ -8,12 +8,12 @@ local function setup()
                 [vim.diagnostic.severity.HINT] = "",
                 [vim.diagnostic.severity.INFO] = "",
             },
-            linehl = {
-                [vim.diagnostic.severity.ERROR] = "DiagnosticError",
-                [vim.diagnostic.severity.WARN] = "DiagnosticWarn",
-                [vim.diagnostic.severity.HINT] = "DiagnosticHint",
-                [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
-            },
+            --linehl = {
+            --    [vim.diagnostic.severity.ERROR] = "DiagnosticError",
+            --    [vim.diagnostic.severity.WARN] = "DiagnosticWarn",
+            --    [vim.diagnostic.severity.HINT] = "DiagnosticHint",
+            --    [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
+            --},
             numhl = {
                 [vim.diagnostic.severity.ERROR] = "DiagnosticError",
                 [vim.diagnostic.severity.WARN] = "DiagnosticWarn",
@@ -27,13 +27,11 @@ local function setup()
             focusable = false,
             style = "minimal",
             border = "rounded",
-            source = "always",
+            source = true,
             header = "",
             prefix = "",
         },
     }
-
-    vim.diagnostic.config(config)
 
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
         border = "rounded",
