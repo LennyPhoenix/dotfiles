@@ -175,18 +175,18 @@ XF86AudioPrev
 
 # Brightness up
 XF86MonBrightnessUp
-  xbacklight -inc 5
+    xbacklight -inc 5
 
 # And brightness down
 XF86MonBrightnessDown
-  xbacklight -dec 5
+    xbacklight -dec 5
 
 # Screenshot
 {_,super + ,shift + }Print
-  cd ~/Pictures/ && scrot { ,-u,-fs}
+    cd ~/Pictures/ && scrot { ,-u,-fs}
 
 ctrl + {_,super + ,shift + }Print
-  scrot { ,-u,-fs} /tmp/ -e 'xclip -selection clipboard -target image/png -i $f'
+    scrot { ,-u,-fs} $(mktemp -u --suffix=.png) -e 'xclip -selection clipboard -target image/png -i $f'
 
 # XProp
 super + shift + x 
