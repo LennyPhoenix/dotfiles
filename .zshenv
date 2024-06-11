@@ -30,3 +30,11 @@ export EDITOR=nvim
 # NNN configuration
 export NNN_OPTS="ea"
 export NNN_PLUG="m:nmount;p:preview-tui;n:nuke"
+
+# GTK
+export GTK_THEME=Dracula
+
+# QT
+export QT_STYLE_OVERRIDE=kvantum
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_ENABLE_HIGHDPI_SCALING=1
