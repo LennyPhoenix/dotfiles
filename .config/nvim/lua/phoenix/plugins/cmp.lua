@@ -9,6 +9,7 @@ local function config()
     local cmp = require("cmp")
     local snippy = require("snippy")
     require("copilot_cmp").setup()
+
     cmp.setup {
         snippet = {
             expand = function(args)
@@ -51,10 +52,10 @@ local function config()
             end, { "i", "s" }),
         },
         sources = {
-            { name = "copilot" },
             { name = "nvim_lsp" },
             { name = "snippy" },
             { name = "path" },
+            { name = "copilot" },
         },
         confirm_opts = {
             behavior = cmp.ConfirmBehavior.Replace,
