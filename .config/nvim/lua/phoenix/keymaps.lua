@@ -47,7 +47,7 @@ keymap("x", "<M-j>", "<Cmd>move '>+1<CR>gv-gv", noremap)
 keymap("x", "<M-k>", "<Cmd>move '<-2<CR>gv-gv", noremap)
 
 -- Better paste
-keymap("x", "<Leader>p", "\"_dP", noremap)
+keymap("x", "<Leader>p", '"_dP', noremap)
 
 -- Terminal --
 -- Better terminal navigation

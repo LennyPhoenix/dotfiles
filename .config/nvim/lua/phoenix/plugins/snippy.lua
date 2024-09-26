@@ -1,4 +1,4 @@
 return {
-    "dcampos/nvim-snippy",
-    config = true
+	"dcampos/nvim-snippy",
+	config = true,
 }
