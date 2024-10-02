@@ -18,7 +18,7 @@ local function config()
 			fullscreen = true, -- whether to fullscreen explorer window when current tab is empty
 		},
 		picker = {
-			cmd = "nnn", -- command override (-p flag is implied)
+			cmd = "nnn -a", -- command override (-p flag is implied)
 			style = {
 				width = 0.5, -- percentage relative to terminal size when < 1, absolute otherwise
 				height = 0.5, -- ^

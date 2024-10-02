@@ -85,7 +85,7 @@ nnn ()
 
     # The backslash allows one to alias n to nnn if desired without making an
     # infinitely recursive alias
-    command nnn "$@"
+    command nnn "$@" -a
 
     if [ -f "$NNN_TMPFILE" ]; then
         . "$NNN_TMPFILE"

@@ -28,7 +28,7 @@ export TERMINAL=alacritty
 export EDITOR=nvim
 
 # NNN configuration
-export NNN_OPTS="ea"
+export NNN_OPTS="e"
 export NNN_PLUG="m:nmount;p:preview-tui;n:nuke"
 
 # GTK
