@@ -55,6 +55,7 @@ local function config()
 			w = { "<Cmd>w<CR>", "Write" },
 			T = { "<Cmd>tabnew<CR>", "New Tab" },
 			p = { "<Cmd>Lazy<CR>", "Lazy" },
+			["lJ"] = { "<Cmd>silent !jq . \"%\" > /tmp/jqout && cat /tmp/jqout > \"%\"<CR>", "Format JSON" },
 		},
 	})
 end
