@@ -26,19 +26,19 @@ foreground = "0xe6e1cf"
 size = 7
 
 [font.bold]
-family = "Source Code Pro"
+family = "Dejavu Sans Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Source Code Pro"
+family = "Dejavu Sans Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Source Code Pro"
+family = "Dejavu Sans Mono"
 style = "Italic"
 
 [font.normal]
-family = "Source Code Pro"
+family = "Dejavu Sans Mono"
 style = "Regular"
 
 [window]

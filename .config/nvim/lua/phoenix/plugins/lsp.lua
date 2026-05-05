@@ -80,33 +80,48 @@ end
 local function setup_rust()
 	vim.g.rustaceanvim = {
 		server = {
+			default_settings = {
+				["rust-analyzer"] = {
+					["check"] = {
+						["workspace"] = false,
+					},
+					["cfg"] = {
+						["setTest"] = false,
+					},
+				},
+			},
 			on_attach = function(_, bufnr)
 				vim.lsp.inlay_hint.enable(true)
 				set_keybinds(bufnr)
 
 				require("which-key").register({
-					["<Leader>l"] = {
-						a = { "<Cmd>RustLsp codeAction<CR>", "Code Actions" },
-						c = { "<Cmd>RustLsp openCargo<CR>", "Open Cargo.toml" },
-						p = { "<Cmd>RustLsp parentModule<CR>", "Parent Module" },
-						R = { "<Cmd>RustLsp runnables<CR>", "Runnables" },
-						D = { "<Cmd>RustLsp debuggables<CR>", "Debuggables" },
-						j = { "<Cmd>RustLsp joinLines<CR>", "Join Lines" },
-						l = { "<Cmd>RustLsp renderDiagnostic<CR>", "Line Info" },
-						i = {
-							name = "Inlay Hints",
-							e = {
-								function()
-									vim.lsp.inlay_hint.enable(true)
-								end,
-								"Enable",
+					["<Leader>"] = {
+						l = {
+							a = { "<Cmd>RustLsp codeAction<CR>", "Code Actions" },
+							c = { "<Cmd>RustLsp openCargo<CR>", "Open Cargo.toml" },
+							p = { "<Cmd>RustLsp parentModule<CR>", "Parent Module" },
+							R = { "<Cmd>RustLsp runnables<CR>", "Runnables" },
+							D = { "<Cmd>RustLsp debuggables<CR>", "Debuggables" },
+							j = { "<Cmd>RustLsp joinLines<CR>", "Join Lines" },
+							l = { "<Cmd>RustLsp renderDiagnostic<CR>", "Line Info" },
+							i = {
+								name = "Inlay Hints",
+								e = {
+									function()
+										vim.lsp.inlay_hint.enable(true)
+									end,
+									"Enable",
+								},
+								d = {
+									function()
+										vim.lsp.inlay_hint.enable(false)
+									end,
+									"Disable",
+								},
 							},
-							d = {
-								function()
-									vim.lsp.inlay_hint.enable(false)
-								end,
-								"Disable",
-							},
+						},
+						f = {
+							--d = { "<Cmd>TelescopeDiagnosticsCurrentPackage<CR>", "Diagnostics" },
 						},
 					},
 					["<A-k>"] = { "<Cmd>RustLsp moveItem up<CR>", "Move item up" },
@@ -168,7 +183,7 @@ end
 return {
 	"williamboman/mason-lspconfig.nvim",
 	dependencies = {
-		"mason.nvim",
+		{ "mason.nvim", version = "^1" },
 		"which-key.nvim",
 		"telescope.nvim",
 		"hrsh7th/cmp-nvim-lsp",
@@ -179,4 +194,5 @@ return {
 		"nvimtools/none-ls.nvim",
 	},
 	config = config,
+	version = "^1",
 }

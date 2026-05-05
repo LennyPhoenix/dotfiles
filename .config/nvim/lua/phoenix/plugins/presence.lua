@@ -28,4 +28,5 @@ end
 return {
 	"andweeb/presence.nvim",
 	config = config,
+    enabled = false,
 }

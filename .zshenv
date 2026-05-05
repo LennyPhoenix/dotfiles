@@ -7,6 +7,10 @@ if [ -d "$HOME/.local/share/gem/ruby/3.0.0/bin" ] ; then
     PATH="$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH"
 fi
 
+if [ -d "$HOME/adb-fastboot/platform-tools" ] ; then
+    PATH="$HOME/adb-fastboot/platform-tools:$PATH"
+fi
+
 if [ -f "$HOME/.cargo/env" ] ; then
   . "$HOME/.cargo/env"
 fi

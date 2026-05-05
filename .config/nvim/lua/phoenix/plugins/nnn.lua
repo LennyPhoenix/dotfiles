@@ -38,7 +38,7 @@ local function config()
 				"gitcommit",
 			},
 		},
-		auto_close = true, -- close tabpage/nvim when nnn is last window
+		auto_close = false, -- close tabpage/nvim when nnn is last window
 		replace_netrw = "picker", -- or "explorer" / "picker"
 		mappings = {}, -- table containing mappings, see below
 		windownav = { -- window movement mappings to navigate out of nnn

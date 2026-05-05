@@ -55,6 +55,8 @@ local function config()
 			w = { "<Cmd>w<CR>", "Write" },
 			T = { "<Cmd>tabnew<CR>", "New Tab" },
 			p = { "<Cmd>Lazy<CR>", "Lazy" },
+            s = { "<Cmd>mksession! ~/session.nvim<CR>", "Save Session" },
+            Q = { "<Cmd>mksession! ~/session.nvim<CR><Cmd>:qa<CR>", "Save and Quit" },
 			["lJ"] = { "<Cmd>silent !jq . \"%\" > /tmp/jqout && cat /tmp/jqout > \"%\"<CR>", "Format JSON" },
 		},
 	})

@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Screens
+autorandr --change
 ~/.fehbg &
 
 # Xorg config
@@ -10,9 +12,16 @@ xset s 60 120
 # Keybinds
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-# BSPWM Config
-bspc monitor -d I II III IV V VI VII VIII IX X
+# Monitor Setup
+if [[ $(xrandr -q | grep "DP-4 connected") ]];
+then
+    bspc monitor eDP-1 -d I II III IV V
+    bspc monitor DP-4 -d VI VII VIII IX X
+else
+    bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X
+fi
 
+# BSPWM Config
 bspc config border_width          2
 bspc config window_gap            4
 bspc config top_padding           30
@@ -32,35 +41,38 @@ bspc config normal_border_color "#b77ee0"
 
 # Rules
 bspc rule -a QjackCtl state=floating
-bspc rule -a TopTracker focus=off sticky=on
 bspc rule -a Brave-browser desktop='^2'
-bspc rule -a obsidian desktop='^7'
+bspc rule -a obsidian desktop='^7' follow=off focus=off locked=on
 bspc rule -a Steam desktop='^8' follow=off focus=off
 bspc rule -a discord desktop='^9'
 bspc rule -a Slack desktop='^9'
 bspc rule -a Spotify desktop='^10'
 bspc rule -a SoulseekQt desktop='^10' follow=on
 bspc rule -a org.nicotine_plus.Nicotine desktop='^10' follow=on
+bspc rule -a gcr-prompter focus=on sticky=on follow=on
 
 # Autostart
 xss-lock -n $HOME/.config/bspwm/scripts/dim-screen.sh -- smokescreen & # screensaver
 lxpolkit & # polkit auth agent
-sh ~/.screenlayout/monitor.sh & # arandr
-picom -CGb & # compositor
+picom -b # compositor
 wired & # notifications
-~/.config/polybar/launch.sh & #TODO: spotify
 /usr/lib/geoclue-2.0/demos/agent & # geoclue (for redshift)
 syncthing serve --no-browser & # file sync
+mount-personal &
+sleep 1
+~/.config/polybar/launch.sh & #TODO: spotify
 
 # Delayed
-sleep 3
-redshift-gtk & # night mode
-nm-applet & # networks tray icon
+sleep 6
+#redshift-gtk & # night mode
+#nm-applet & # networks tray icon
 caffeine &
 # bash /usr/lib/ugee-pentablet/ugee-pentablet.sh /mini & # drawing tablet driver
 blueman-applet & # bluetooth tray icon
 #steam -silent & # steam
 #discord --start-minimized & # discord
 
+# Persistant obsidian instance
+~/.config/bspwm/scripts/monitor_program.sh obsidian 7 &
 # Low battery notifier
 ~/.config/bspwm/scripts/low_bat_notifier.sh

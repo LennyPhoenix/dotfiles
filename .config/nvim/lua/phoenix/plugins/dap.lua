@@ -22,6 +22,10 @@ local function config()
 		},
 	})
 
+	require("dap-cortex-debug").setup({
+		dap_vscode_filetypes = { "rust", "c", "cpp" },
+	})
+
 	local dap, dapui = require("dap"), require("dapui")
 
 	dapui.setup({
@@ -89,6 +93,8 @@ local function config()
 		dapui.open()
 	end
 
+	require("dap.ext.vscode").load_launchjs(".vscode/launch.json", { lldb = { "c", "cpp", "rust" } })
+
 	keybinds()
 end
 
@@ -100,6 +106,7 @@ return {
 		"mfussenegger/nvim-dap",
 		"rcarriga/nvim-dap-ui",
 		"nvim-neotest/nvim-nio",
+		"jedrzejboczar/nvim-dap-cortex-debug",
 	},
 	config = config,
 }
